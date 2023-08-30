@@ -12,13 +12,14 @@ RSpec.describe Item, type: :model do
       end
     end
 
-
+    
     context "出品できない場合" do
-      it "ユーザー登録していないと出品できない" do
-        @item.user = nil
-        @item.valid?
-        expect(@item.errors.full_messages).to include('User must exist')
-      end
+      
+        it "ユーザー登録していないと出品できない" do
+          @item.user = nil
+          @item.valid?
+          expect(@item.errors.full_messages).to include('User must exist')
+        end
 
       context "どれか一つでも空、もしくは『----』では出品できない" do
         it "商品画像が空では出品できない" do
@@ -69,7 +70,7 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include("Scheduled delivery can't be blank")
         end
 
-        it "価格が空欄では出品できない" do
+        it "価格が空では出品できない" do
           @item.price  = ""
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not a number")
