@@ -91,7 +91,7 @@ RSpec.describe Item, type: :model do
         end
       end
       it "価格に少数が含まれると出品できない" do
-        @item.price = 0.1
+        @item.price = 300.1
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be an integer")
       end
