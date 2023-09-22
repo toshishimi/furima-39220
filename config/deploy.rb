@@ -6,6 +6,7 @@ set :application, 'furima-39220'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:toshishimi/furima-39220.git'
+set :branch, 'main' # ブランチ名を 'main' に指定する
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
